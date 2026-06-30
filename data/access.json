@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "version": "2026-06-to-2026-08",
+    "updatedAt": "2026-06-30",
+    "note": "Monthly password gate for GitHub Pages. Store only SHA-256 hashes here."
+  },
+  "rememberHours": 8,
+  "monthlyPasswords": {
+    "2026-06": {
+      "passwordHash": "f45d0df1d4e753e786cdc0100aff5844f019a36b280ab07cd851e492f91c88c1",
+      "passwordHint": "請輸入 2026-06 月份密碼"
+    },
+    "2026-07": {
+      "passwordHash": "229be2d76fe86fcf489bd9d5cfc6f23eead7cc4d4db56333a0f873c50b0b87d3",
+      "passwordHint": "請輸入 2026-07 月份密碼"
+    },
+    "2026-08": {
+      "passwordHash": "d2c3f7d7309a3e349ca10bb746d5c8a29f2310df80b9ffdf284cb2845dcceee2",
+      "passwordHint": "請輸入 2026-08 月份密碼"
+    }
+  }
+}

@@ -344,4 +344,8 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-init();
+if (window.authReady) {
+  window.authReady.then(init).catch((error) => console.error(error));
+} else {
+  init();
+}

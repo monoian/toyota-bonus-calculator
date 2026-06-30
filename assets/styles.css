@@ -23,6 +23,58 @@ body {
   color: var(--text);
 }
 
+body.auth-locked {
+  min-height: 100vh;
+}
+
+body.auth-locked > :not(.password-gate) {
+  display: none !important;
+}
+
+.password-gate {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.password-card {
+  width: min(420px, 100%);
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.password-card h1 {
+  font-size: 30px;
+}
+
+.password-copy,
+.password-meta {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.password-meta {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.password-error {
+  border: 1px solid #fecaca;
+  border-radius: 14px;
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  padding: 10px 12px;
+  line-height: 1.6;
+  font-size: 13px;
+  font-weight: 750;
+}
+
 .app-header,
 .app-footer,
 .layout {

@@ -559,4 +559,8 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-initAdmin();
+if (window.authReady) {
+  window.authReady.then(initAdmin).catch((error) => console.error(error));
+} else {
+  initAdmin();
+}
