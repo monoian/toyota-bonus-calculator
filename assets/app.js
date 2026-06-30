@@ -31,8 +31,8 @@ const fields = {
   zeroInterestBurden: $("zeroInterestBurden"),
   externalPromotionDeduction: $("externalPromotionDeduction"),
   manualAdjustment: $("manualAdjustment"),
-  insuranceBAmount: $("insuranceBAmount"),
-  avAmount: $("avAmount"),
+  noInsuranceDeduction: $("noInsuranceDeduction"),
+  noAvDeduction: $("noAvDeduction"),
   accessorySaleAmount: $("accessorySaleAmount"),
   accessoryCostAmount: $("accessoryCostAmount"),
   accessoryBonusTotal: $("accessoryBonusTotal"),
@@ -189,8 +189,8 @@ function calculate() {
   const zeroInterestBurden = numberValue(fields.zeroInterestBurden, 0);
   const externalPromotionDeduction = numberValue(fields.externalPromotionDeduction, 0);
   const manualAdjustment = numberValue(fields.manualAdjustment, 0);
-  const insuranceBonus = numberValue(fields.insuranceBAmount, 0);
-  const avBonus = numberValue(fields.avAmount, 0);
+  const noInsuranceDeduction = numberValue(fields.noInsuranceDeduction, 0);
+  const noAvDeduction = numberValue(fields.noAvDeduction, 0);
   const accessorySaleAmount = numberValue(fields.accessorySaleAmount, 0);
   const accessoryCostAmount = numberValue(fields.accessoryCostAmount, 0);
   const accessoryBonusTotal = accessorySaleAmount - accessoryCostAmount;
@@ -203,8 +203,8 @@ function calculate() {
     { label: "所支援金", amount: supportAmount, note: manualNote(supportAmount) },
     { label: "0利率負擔", amount: -Math.abs(zeroInterestBurden), note: zeroInterestBurden === 0 ? "無" : "手動輸入扣款" },
     { label: "外促活動內扣", amount: -Math.abs(externalPromotionDeduction), note: externalPromotionDeduction === 0 ? "無" : "手動輸入扣款" },
-    { label: "保險乙式", amount: insuranceBonus, note: manualNote(insuranceBonus) },
-    { label: "影音", amount: avBonus, note: manualNote(avBonus) },
+    { label: "無乙式減發", amount: -Math.abs(noInsuranceDeduction), note: noInsuranceDeduction === 0 ? "無" : "手動輸入扣款" },
+    { label: "無影音減發", amount: -Math.abs(noAvDeduction), note: noAvDeduction === 0 ? "無" : "手動輸入扣款" },
     { label: "配件獎金合計", amount: accessoryBonusTotal, note: accessoryBonusTotal === 0 ? "未填" : `成交 ${currency(accessorySaleAmount)} / 成本 ${currency(accessoryCostAmount)}` },
     { label: "其他調整", amount: manualAdjustment, note: manualAdjustment === 0 ? "無" : "手動輸入" }
   ];
@@ -256,7 +256,7 @@ function renderRulesPreview() {
     <ul>
       <li>適用期間：${escapeHtml(rules.meta?.effectiveFrom || "未設定")} ～ ${escapeHtml(rules.meta?.effectiveTo || "未設定")}</li>
       <li>前台所有獎金項目皆由業務手動輸入。</li>
-      <li>0利率負擔與外促活動內扣請填正數，系統會自動扣除。</li>
+      <li>0利率負擔、外促活動內扣、無乙式減發、無影音減發請填正數，系統會自動扣除。</li>
     </ul>
   `;
 }
@@ -271,8 +271,8 @@ function resetForm() {
   fields.zeroInterestBurden.value = 0;
   fields.externalPromotionDeduction.value = 0;
   fields.manualAdjustment.value = 0;
-  fields.insuranceBAmount.value = 0;
-  fields.avAmount.value = 0;
+  fields.noInsuranceDeduction.value = 0;
+  fields.noAvDeduction.value = 0;
   fields.accessorySaleAmount.value = 0;
   fields.accessoryCostAmount.value = 0;
   fields.accessoryBonusTotal.value = 0;
