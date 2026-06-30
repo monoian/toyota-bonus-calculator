@@ -33,6 +33,9 @@ const fields = {
   manualAdjustment: $("manualAdjustment"),
   insuranceBAmount: $("insuranceBAmount"),
   avAmount: $("avAmount"),
+  accessorySaleAmount: $("accessorySaleAmount"),
+  accessoryCostAmount: $("accessoryCostAmount"),
+  accessoryBonusTotal: $("accessoryBonusTotal"),
   note: $("note")
 };
 
@@ -188,6 +191,10 @@ function calculate() {
   const manualAdjustment = numberValue(fields.manualAdjustment, 0);
   const insuranceBonus = numberValue(fields.insuranceBAmount, 0);
   const avBonus = numberValue(fields.avAmount, 0);
+  const accessorySaleAmount = numberValue(fields.accessorySaleAmount, 0);
+  const accessoryCostAmount = numberValue(fields.accessoryCostAmount, 0);
+  const accessoryBonusTotal = accessorySaleAmount - accessoryCostAmount;
+  fields.accessoryBonusTotal.value = Math.round(accessoryBonusTotal);
 
   const rows = [
     { label: "車輛獎金", amount: vehicleBonus, note: manualNote(vehicleBonus) },
@@ -198,6 +205,7 @@ function calculate() {
     { label: "外促活動內扣", amount: -Math.abs(externalPromotionDeduction), note: externalPromotionDeduction === 0 ? "無" : "手動輸入扣款" },
     { label: "保險乙式", amount: insuranceBonus, note: manualNote(insuranceBonus) },
     { label: "影音", amount: avBonus, note: manualNote(avBonus) },
+    { label: "配件獎金合計", amount: accessoryBonusTotal, note: accessoryBonusTotal === 0 ? "未填" : `成交 ${currency(accessorySaleAmount)} / 成本 ${currency(accessoryCostAmount)}` },
     { label: "其他調整", amount: manualAdjustment, note: manualAdjustment === 0 ? "無" : "手動輸入" }
   ];
 
@@ -265,6 +273,9 @@ function resetForm() {
   fields.manualAdjustment.value = 0;
   fields.insuranceBAmount.value = 0;
   fields.avAmount.value = 0;
+  fields.accessorySaleAmount.value = 0;
+  fields.accessoryCostAmount.value = 0;
+  fields.accessoryBonusTotal.value = 0;
   populateGrades();
   calculate();
 }

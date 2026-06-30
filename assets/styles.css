@@ -40,6 +40,7 @@ body {
 
 h1,
 h2,
+h3,
 p {
   margin: 0;
 }
@@ -52,6 +53,11 @@ h1 {
 h2 {
   font-size: 22px;
   letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 18px;
+  letter-spacing: -0.01em;
 }
 
 .eyebrow {
@@ -204,6 +210,11 @@ textarea:focus {
   box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.08);
 }
 
+input[readonly] {
+  background: #f9fafb;
+  color: var(--accent-2);
+}
+
 hr {
   border: 0;
   border-top: 1px solid var(--line);
@@ -222,6 +233,16 @@ hr {
 
 .vehicle-card strong {
   color: var(--text);
+}
+
+.form-section {
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.section-heading {
+  margin-bottom: 14px;
 }
 
 .addons {

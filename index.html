@@ -114,6 +114,27 @@
           </label>
         </div>
 
+        <section class="form-section" aria-labelledby="accessoryTitle">
+          <div class="section-heading">
+            <p class="eyebrow">Accessories</p>
+            <h3 id="accessoryTitle">配件</h3>
+          </div>
+          <div class="grid three">
+            <label>
+              配件成交金額（元）
+              <input id="accessorySaleAmount" name="accessorySaleAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            </label>
+            <label>
+              配件負擔成本（元）
+              <input id="accessoryCostAmount" name="accessoryCostAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            </label>
+            <label>
+              配件獎金合計（元）
+              <input id="accessoryBonusTotal" name="accessoryBonusTotal" type="number" inputmode="numeric" step="100" value="0" readonly />
+            </label>
+          </div>
+        </section>
+
         <label>
           備註（選填）
           <textarea id="note" name="note" rows="3" placeholder="例如：本單支援金已由所長核准"></textarea>
@@ -147,6 +168,6 @@
     <span>資料維護：data/vehicles.tw.toyota.2026-06-21.json、data/rules.example.json</span>
   </footer>
 
-  <script src="assets/app.js?v=manual-entry-20260630"></script>
+  <script src="assets/app.js?v=accessories-20260630"></script>
 </body>
 </html>
