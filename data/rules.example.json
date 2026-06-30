@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "version": "2026-06-example",
+    "currency": "TWD",
+    "description": "獎金規則範例。所有金額預設為 0，請依公司每月公告調整。",
+    "effectiveFrom": "2026-06-01",
+    "effectiveTo": "2026-06-30"
+  },
+  "calculation": {
+    "rounding": "nearestInteger",
+    "vehicleBonusFallback": 0
+  },
+  "stageBonusTiers": [
+    { "minUnits": 0, "label": "未達階段", "amount": 0 },
+    { "minUnits": 3, "label": "第 1 階段", "amount": 0 },
+    { "minUnits": 5, "label": "第 2 階段", "amount": 0 },
+    { "minUnits": 8, "label": "第 3 階段", "amount": 0 },
+    { "minUnits": 10, "label": "第 4 階段", "amount": 0 }
+  ],
+  "cumulativeBonusTiers": [
+    { "minUnits": 0, "label": "未達累計", "amount": 0 },
+    { "minUnits": 10, "label": "累計 10 台", "amount": 0 },
+    { "minUnits": 15, "label": "累計 15 台", "amount": 0 },
+    { "minUnits": 20, "label": "累計 20 台", "amount": 0 },
+    { "minUnits": 25, "label": "累計 25 台", "amount": 0 }
+  ],
+  "addOns": {
+    "insuranceB": { "label": "保險乙式", "amount": 0 },
+    "av": { "label": "影音", "amount": 0 }
+  },
+  "support": {
+    "label": "所支援金",
+    "defaultAmount": 0
+  }
+}

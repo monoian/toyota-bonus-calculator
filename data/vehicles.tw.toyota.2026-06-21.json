@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "market": "TW",
+    "brand": "Toyota",
+    "currency": "TWD",
+    "priceUnit": "萬",
+    "verifiedAt": "2026-06-21",
+    "description": "台灣 Toyota 官網車系與等級預載資料。建議售價僅供車款辨識與試算預設值，實際成交與獎金請依內部規則維護。",
+    "vehicleBonusDefaultMode": "fixed",
+    "modelYears": [
+      { "id": "pre-26", "label": "準26" },
+      { "id": "26", "label": "正26" },
+      { "id": "pre-27", "label": "準27" }
+    ]
+  },
+  "vehicles": [
+    {
+      "id": "hilux",
+      "model": "HILUX",
+      "category": "皮卡",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/HILUX/",
+      "grades": [
+        { "id": "hilux-preorder", "name": "HILUX 預購價", "powertrain": "柴油", "listPriceWan": 163.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "rav4",
+      "model": "RAV4",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/RAV4/",
+      "grades": [
+        { "id": "rav4-hybrid-luxury", "name": "HYBRID 豪華", "powertrain": "HYBRID", "listPriceWan": 104.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "rav4-hybrid-premium", "name": "HYBRID 尊爵", "powertrain": "HYBRID", "listPriceWan": 117.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "rav4-hybrid-premium-plus", "name": "HYBRID 尊爵+", "powertrain": "HYBRID", "listPriceWan": 122.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "rav4-hybrid-flagship", "name": "HYBRID 旗艦", "powertrain": "HYBRID", "listPriceWan": 130.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "rav4-phev", "name": "PHEV", "powertrain": "插電式油電車", "listPriceWan": 149.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "rav4-adventure",
+      "model": "RAV4 ADVENTURE",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/RAV4_ADV/",
+      "grades": [
+        { "id": "rav4-adventure-4wd", "name": "ADVENTURE 4WD", "powertrain": "HYBRID", "listPriceWan": 133.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "rav4-gr-sport",
+      "model": "RAV4 GR SPORT",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/RAV4_GR/",
+      "grades": [
+        { "id": "rav4-gr-sport-4wd", "name": "GR SPORT 4WD", "powertrain": "HYBRID", "listPriceWan": 139.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "urban-cruiser",
+      "model": "URBAN CRUISER",
+      "category": "純電車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/URBAN_CRUISER/",
+      "grades": [
+        { "id": "urban-cruiser", "name": "Urban Cruiser", "powertrain": "純電車", "listPriceWan": 127.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "bz4x",
+      "model": "bZ4X",
+      "category": "純電車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/bZ4X/",
+      "grades": [
+        { "id": "bz4x", "name": "bZ4X", "powertrain": "純電車", "listPriceWan": 128.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "land-cruiser",
+      "model": "LAND CRUISER",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/LANDCRUISER/",
+      "grades": [
+        { "id": "land-cruiser-explorer", "name": "越野探索版", "powertrain": "柴油", "listPriceWan": 288.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "land-cruiser-extreme", "name": "越野極境版", "powertrain": "柴油", "listPriceWan": 290.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "yaris-cross",
+      "model": "YARiS CROSS",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/YARISCROSS/",
+      "grades": [
+        { "id": "yaris-cross-enjoy", "name": "享樂版", "powertrain": "汽油", "listPriceWan": 69.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "yaris-cross-cool", "name": "酷動版", "powertrain": "汽油", "listPriceWan": 73.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "yaris-cross-trendy", "name": "潮玩版", "powertrain": "汽油", "listPriceWan": 79.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "prius-phev",
+      "model": "PRIUS PHEV",
+      "category": "插電式油電車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/PRIUS_PHEV/",
+      "grades": [
+        { "id": "prius-phev-flagship", "name": "旗艦", "powertrain": "插電式油電車", "listPriceWan": 129.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "prius-phev-platinum", "name": "鉑金", "powertrain": "插電式油電車", "listPriceWan": 137.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "crown",
+      "model": "CROWN",
+      "category": "轎車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/CROWN/",
+      "grades": [
+        { "id": "crown-noble", "name": "貴族版", "powertrain": "HYBRID", "listPriceWan": 157.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "crown-royal", "name": "皇家版", "powertrain": "HYBRID", "listPriceWan": 210.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "town-ace-van",
+      "model": "TOWN ACE廂型車",
+      "category": "輕型商用車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/TOWNACEVAN/",
+      "grades": [
+        { "id": "town-ace-van-2seat-mt", "name": "2人座/手排", "powertrain": "汽油", "listPriceWan": 53.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "town-ace-van-5seat-mt", "name": "5人座/手排", "powertrain": "汽油", "listPriceWan": 56.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "town-ace-van-5seat-at", "name": "5人座/自排", "powertrain": "汽油", "listPriceWan": 60.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "town-ace-van-5seat-at-tss", "name": "5人座/自排/TSS", "powertrain": "汽油", "listPriceWan": 63.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "town-ace-truck",
+      "model": "TOWN ACE貨卡",
+      "category": "輕型商用車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/TOWNACE/",
+      "grades": [
+        { "id": "town-ace-truck-iron-mt", "name": "鐵床/手排", "powertrain": "汽油", "listPriceWan": 51.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "town-ace-truck-wood-mt", "name": "木床/手排", "powertrain": "汽油", "listPriceWan": 52.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "town-ace-truck-wood-at", "name": "木床/自排", "powertrain": "汽油", "listPriceWan": 55.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "town-ace-truck-wood-at-tss", "name": "木床/自排/TSS", "powertrain": "汽油", "listPriceWan": 57.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "vios",
+      "model": "VIOS",
+      "category": "轎車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/VIOS/",
+      "grades": [
+        { "id": "vios-classic", "name": "經典", "powertrain": "汽油", "listPriceWan": 60.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "vios-luxury", "name": "豪華", "powertrain": "汽油", "listPriceWan": 67.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "altis",
+      "model": "ALTIS",
+      "category": "轎車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/ALTIS/",
+      "grades": [
+        { "id": "altis-gas-classic", "name": "汽油 經典", "powertrain": "汽油", "listPriceWan": 73.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "altis-gas-luxury", "name": "汽油 豪華", "powertrain": "汽油", "listPriceWan": 80.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "altis-gas-60th", "name": "汽油 The 60th", "powertrain": "汽油", "listPriceWan": 81.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "altis-hybrid-luxury", "name": "HYBRID 豪華", "powertrain": "HYBRID", "listPriceWan": 85.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "altis-hybrid-premium", "name": "HYBRID 尊爵", "powertrain": "HYBRID", "listPriceWan": 88.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "altis-hybrid-60th", "name": "HYBRID The 60th", "powertrain": "HYBRID", "listPriceWan": 89.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "altis-gr-sport",
+      "model": "ALTIS GR SPORT",
+      "category": "轎車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/ALTIS_GR/",
+      "grades": [
+        { "id": "altis-gr-sport-gas", "name": "GR SPORT", "powertrain": "汽油", "listPriceWan": 91.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "altis-gr-sport-hybrid", "name": "HYBRID GR SPORT", "powertrain": "HYBRID", "listPriceWan": 91.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "corolla-cross",
+      "model": "COROLLA CROSS",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/COROLLA_CROSS/",
+      "grades": [
+        { "id": "corolla-cross-gas-luxury", "name": "汽油 豪華", "powertrain": "汽油", "listPriceWan": 80.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-gas-luxury-option", "name": "汽油 豪華(選)", "powertrain": "汽油", "listPriceWan": 83.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-gas-60th", "name": "汽油 The 60th", "powertrain": "汽油", "listPriceWan": 88.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-hybrid-luxury", "name": "HYBRID 豪華", "powertrain": "HYBRID", "listPriceWan": 84.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-hybrid-luxury-option", "name": "HYBRID 豪華(選)", "powertrain": "HYBRID", "listPriceWan": 87.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-hybrid-60th", "name": "HYBRID The 60th", "powertrain": "HYBRID", "listPriceWan": 91.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-hybrid-flagship", "name": "HYBRID 旗艦", "powertrain": "HYBRID", "listPriceWan": 98.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "corolla-cross-gr-sport",
+      "model": "COROLLA CROSS GR SPORT",
+      "category": "運動休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/COROLLA_CROSS_GR/",
+      "grades": [
+        { "id": "corolla-cross-gr-sport-gas", "name": "GR SPORT", "powertrain": "汽油", "listPriceWan": 91.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-gr-sport-hybrid", "name": "HYBRID GR SPORT", "powertrain": "HYBRID", "listPriceWan": 98.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "corolla-cross-gr-sport-hybrid-option", "name": "HYBRID GR SPORT(選)", "powertrain": "HYBRID", "listPriceWan": 103.5, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "corolla-sport",
+      "model": "COROLLA SPORT",
+      "category": "掀背車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/COROLLA_SPORT/",
+      "grades": [
+        { "id": "corolla-sport", "name": "COROLLA SPORT", "powertrain": "汽油", "listPriceWan": 96.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "camry",
+      "model": "CAMRY",
+      "category": "轎車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/CAMRY/",
+      "grades": [
+        { "id": "camry-gas-flagship", "name": "汽油 旗艦", "powertrain": "汽油", "listPriceWan": 110.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "camry-hybrid-premium", "name": "HYBRID 尊爵", "powertrain": "HYBRID", "listPriceWan": 112.9, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "camry-hybrid-flagship", "name": "HYBRID 旗艦", "powertrain": "HYBRID", "listPriceWan": 125.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "gr86",
+      "model": "GR86",
+      "category": "跑車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/GR86/",
+      "grades": [
+        { "id": "gr86-6mt-brembo", "name": "GR86 6MT Brembo", "powertrain": "汽油", "listPriceWan": 173.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "gr86-6at-brembo", "name": "GR86 6AT Brembo", "powertrain": "汽油", "listPriceWan": 174.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "gr-yaris",
+      "model": "GR YARIS",
+      "category": "跑車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/GR_YARIS/",
+      "grades": [
+        { "id": "gr-yaris-mt", "name": "GR YARIS MT", "powertrain": "汽油", "listPriceWan": 195.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "gr-yaris-at", "name": "GR YARIS AT", "powertrain": "汽油", "listPriceWan": 199.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "gr-supra",
+      "model": "GR SUPRA",
+      "category": "跑車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/SUPRA/",
+      "grades": [
+        { "id": "supra-30t-premium-mt", "name": "3.0T Premium MT", "powertrain": "汽油", "listPriceWan": 266.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "supra-30t-premium-at", "name": "3.0T Premium AT", "powertrain": "汽油", "listPriceWan": 269.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "supra-30t-track-edition", "name": "3.0T Track Edition", "powertrain": "汽油", "listPriceWan": 280.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "sienna",
+      "model": "SIENNA",
+      "category": "多功能休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/SIENNA/",
+      "grades": [
+        { "id": "sienna-flagship", "name": "旗艦", "powertrain": "HYBRID", "listPriceWan": 238.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "sienna-platinum", "name": "鉑金", "powertrain": "HYBRID", "listPriceWan": 295.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    },
+    {
+      "id": "alphard",
+      "model": "ALPHARD",
+      "category": "多功能休旅車",
+      "sourceUrl": "https://www.toyota.com.tw/showroom/ALPHARD/",
+      "grades": [
+        { "id": "alphard-hybrid", "name": "HYBRID", "powertrain": "HYBRID", "listPriceWan": 316.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 },
+        { "id": "alphard-phev", "name": "PHEV", "powertrain": "插電式油電車", "listPriceWan": 330.0, "vehicleBonusMode": "fixed", "vehicleBonusFixed": 0 }
+      ]
+    }
+  ]
+}

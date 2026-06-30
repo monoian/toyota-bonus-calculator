@@ -1,0 +1,6 @@
+data/private/
+data/*.private.json
+data/*.local.json
+*.local.xlsx
+*.local.xls
+*.local.csv

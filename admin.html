@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111827" />
+  <title>Toyota 車輛獎金 Excel 後台</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Bonus Admin</p>
+      <h1>車輛獎金 Excel 後台</h1>
+      <p class="subhead">上傳主管維護的 Excel，先預覽比對結果，再下載新的車輛資料 JSON。</p>
+    </div>
+    <div class="header-actions">
+      <a class="btn secondary" href="index.html">回前台試算</a>
+      <button id="downloadTemplateBtn" class="btn" type="button">下載 Excel 範本</button>
+    </div>
+  </header>
+
+  <main class="layout admin-layout">
+    <section class="panel form-panel" aria-labelledby="uploadTitle">
+      <div class="panel-title-row">
+        <div>
+          <p class="eyebrow">Excel Upload</p>
+          <h2 id="uploadTitle">上傳車輛獎金</h2>
+        </div>
+        <div class="pill-stack">
+          <span id="catalogVersion" class="pill">載入車輛資料中…</span>
+          <span id="excelParserStatus" class="pill">Excel 解析工具載入中…</span>
+        </div>
+      </div>
+
+      <div id="adminAlert" class="alert hidden"></div>
+
+      <div class="upload-box">
+        <label>
+          Excel 檔案
+          <input id="bonusFile" type="file" accept=".xlsx,.xls,.csv" />
+        </label>
+        <div class="button-row">
+          <button id="applyUploadBtn" class="btn" type="button" disabled>套用並預覽</button>
+          <button id="downloadJsonBtn" class="btn secondary" type="button" disabled>下載更新後 JSON</button>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="format-notes">
+        <h2>Excel 欄位</h2>
+        <p>建議直接下載範本修改。系統優先用「等級ID」與「年式ID」比對車輛，避免同名等級對錯車款或年式。</p>
+        <div class="table-wrap compact">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>欄位</th>
+                <th>用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>車系ID</td><td>可不改，用來輔助辨識</td></tr>
+              <tr><td>等級ID</td><td>主要比對欄位，請保留</td></tr>
+              <tr><td>年式ID</td><td>主要比對欄位，請保留；目前有 pre-26、26、pre-27</td></tr>
+              <tr><td>年式</td><td>顯示文字：準26、正26、準27</td></tr>
+              <tr><td>獎金模式</td><td>固定 或 百分比</td></tr>
+              <tr><td>固定獎金</td><td>固定模式填金額，單位元</td></tr>
+              <tr><td>百分比獎金</td><td>百分比模式填數字，例如 1.2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel result-panel" aria-labelledby="summaryTitle">
+      <p class="eyebrow">Preview</p>
+      <h2 id="summaryTitle">匯入摘要</h2>
+      <div class="summary-grid">
+        <div class="stat-card">
+          <span>讀取列數</span>
+          <strong id="totalRows">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>可更新</span>
+          <strong id="okRows">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>需修正</span>
+          <strong id="errorRows">0</strong>
+        </div>
+      </div>
+      <p id="adminStatus" class="disclaimer">請先下載範本，填好車輛獎金後上傳。</p>
+    </aside>
+  </main>
+
+  <section class="panel full-panel" aria-labelledby="previewTitle">
+    <div class="panel-title-row">
+      <div>
+        <p class="eyebrow">Rows</p>
+        <h2 id="previewTitle">比對結果</h2>
+      </div>
+      <span id="fileName" class="pill">尚未選擇檔案</span>
+    </div>
+    <div class="table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>列</th>
+            <th>車系</th>
+            <th>等級</th>
+            <th>年式</th>
+            <th>模式</th>
+            <th>固定獎金</th>
+            <th>百分比</th>
+            <th>狀態</th>
+          </tr>
+        </thead>
+        <tbody id="previewRows">
+          <tr>
+            <td colspan="8" class="empty-cell">尚未匯入資料</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="app-footer">
+    <span id="adminDataStamp">車輛資料載入中…</span>
+    <span>後台只產生檔案，不會自動上傳或寫入 GitHub。</span>
+  </footer>
+
+  <script src="assets/vendor/xlsx.full.min.js" defer></script>
+  <script src="assets/admin.js" defer></script>
+</body>
+</html>
