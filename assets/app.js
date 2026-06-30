@@ -35,6 +35,7 @@ const fields = {
   noAvDeduction: $("noAvDeduction"),
   accessorySaleAmount: $("accessorySaleAmount"),
   accessoryCostAmount: $("accessoryCostAmount"),
+  accessoryGiftCostAmount: $("accessoryGiftCostAmount"),
   accessoryBonusTotal: $("accessoryBonusTotal"),
   note: $("note")
 };
@@ -215,20 +216,21 @@ function calculate() {
   const noAvDeduction = amountValue(fields.noAvDeduction, 0);
   const accessorySaleAmount = amountValue(fields.accessorySaleAmount, 0);
   const accessoryCostAmount = amountValue(fields.accessoryCostAmount, 0);
-  const accessoryBonusTotal = accessorySaleAmount - accessoryCostAmount;
+  const accessoryGiftCostAmount = amountValue(fields.accessoryGiftCostAmount, 0);
+  const accessoryBonusTotal = accessorySaleAmount - accessoryCostAmount - accessoryGiftCostAmount;
   fields.accessoryBonusTotal.value = amountInputValue(accessoryBonusTotal);
 
   const rows = [
     { label: "車輛獎金", amount: vehicleBonus, note: vehicleBonusRate === 0 ? "未填" : `${percentText(vehicleBonusRate)}% × ${currency(basePrice)}` },
     { label: "階段獎金", amount: stageBonus, note: manualNote(stageBonus) },
-    { label: "業代累計獎金", amount: cumulativeBonus, note: manualNote(cumulativeBonus) },
-    { label: "所支援金", amount: supportAmount, note: manualNote(supportAmount) },
     { label: "0利率負擔", amount: -Math.abs(zeroInterestBurden), note: zeroInterestBurden === 0 ? "無" : "手動輸入扣款" },
     { label: "外促活動內扣", amount: -Math.abs(externalPromotionDeduction), note: externalPromotionDeduction === 0 ? "無" : "手動輸入扣款" },
     { label: "無乙式減發", amount: -Math.abs(noInsuranceDeduction), note: noInsuranceDeduction === 0 ? "無" : "手動輸入扣款" },
     { label: "無影音減發", amount: -Math.abs(noAvDeduction), note: noAvDeduction === 0 ? "無" : "手動輸入扣款" },
-    { label: "配件獎金合計", amount: accessoryBonusTotal, note: accessoryBonusTotal === 0 ? "未填" : `成交 ${currency(accessorySaleAmount)} / 業價 ${currency(accessoryCostAmount)}` },
-    { label: "其他調整", amount: manualAdjustment, note: manualAdjustment === 0 ? "無" : "手動輸入" }
+    { label: "配件獎金合計", amount: accessoryBonusTotal, note: accessoryBonusTotal === 0 ? "未填" : `售價 ${currency(accessorySaleAmount)} / 業價 ${currency(accessoryCostAmount)} / 贈送 ${currency(accessoryGiftCostAmount)}` },
+    { label: "其他調整", amount: manualAdjustment, note: manualAdjustment === 0 ? "無" : "手動輸入" },
+    { label: "所支援金", amount: supportAmount, note: manualNote(supportAmount) },
+    { label: "業代累計獎金", amount: cumulativeBonus, note: manualNote(cumulativeBonus) }
   ];
 
   const total = rows.reduce((sum, row) => sum + Number(row.amount || 0), 0);
@@ -297,6 +299,7 @@ function resetForm() {
   fields.noAvDeduction.value = "";
   fields.accessorySaleAmount.value = "";
   fields.accessoryCostAmount.value = "";
+  fields.accessoryGiftCostAmount.value = "";
   fields.accessoryBonusTotal.value = "";
   populateGrades();
   calculate();

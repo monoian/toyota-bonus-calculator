@@ -265,6 +265,24 @@ hr {
   padding-top: 20px;
 }
 
+.accessory-section {
+  border: 1px solid #fde68a;
+  border-radius: 18px;
+  background: #fffbeb;
+  margin-top: 20px;
+  padding: 18px;
+}
+
+.accessory-section .eyebrow,
+.accessory-section h3 {
+  color: #92400e;
+}
+
+.accessory-section input,
+.accessory-section .unit-input input[readonly] {
+  border-color: #fcd34d;
+}
+
 .section-heading {
   margin-bottom: 14px;
 }

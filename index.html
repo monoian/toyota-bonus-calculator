@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#111827" />
   <title>Toyota 單筆成交獎金計算器</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=accessory-gift-support-20260630" />
 </head>
 <body>
   <header class="app-header">
@@ -90,23 +90,9 @@
               <span aria-hidden="true">000</span>
             </span>
           </label>
-          <label>
-            業代累計獎金（元）
-            <span class="unit-input money-input">
-              <input id="cumulativeBonusAmount" name="cumulativeBonusAmount" type="number" inputmode="decimal" min="0" step="1" />
-              <span aria-hidden="true">000</span>
-            </span>
-          </label>
         </div>
 
         <div class="grid two">
-          <label>
-            所支援金（元）
-            <span class="unit-input money-input">
-              <input id="supportAmount" name="supportAmount" type="number" inputmode="decimal" min="0" step="1" />
-              <span aria-hidden="true">000</span>
-            </span>
-          </label>
           <label>
             0利率負擔（元）
             <span class="unit-input money-input">
@@ -144,14 +130,14 @@
           </label>
         </div>
 
-        <section class="form-section" aria-labelledby="accessoryTitle">
+        <section class="form-section accessory-section" aria-labelledby="accessoryTitle">
           <div class="section-heading">
             <p class="eyebrow">Accessories</p>
             <h3 id="accessoryTitle">配件</h3>
           </div>
-          <div class="grid three">
+          <div class="grid two">
             <label>
-              配件成交金額（元）
+              配件售價金額（元）
               <span class="unit-input money-input">
                 <input id="accessorySaleAmount" name="accessorySaleAmount" type="number" inputmode="decimal" min="0" step="1" />
                 <span aria-hidden="true">000</span>
@@ -161,6 +147,13 @@
               配件業價成本（元）
               <span class="unit-input money-input">
                 <input id="accessoryCostAmount" name="accessoryCostAmount" type="number" inputmode="decimal" min="0" step="1" />
+                <span aria-hidden="true">000</span>
+              </span>
+            </label>
+            <label>
+              贈送配件成本（元）
+              <span class="unit-input money-input">
+                <input id="accessoryGiftCostAmount" name="accessoryGiftCostAmount" type="number" inputmode="decimal" min="0" step="1" />
                 <span aria-hidden="true">000</span>
               </span>
             </label>
@@ -178,6 +171,29 @@
           備註（選填）
           <textarea id="note" name="note" rows="3" placeholder="例如：本單支援金已由所長核准"></textarea>
         </label>
+
+        <section class="form-section support-section" aria-labelledby="supportTitle">
+          <div class="section-heading">
+            <p class="eyebrow">Support</p>
+            <h3 id="supportTitle">支援與累計</h3>
+          </div>
+          <div class="grid two">
+            <label>
+              所支援金（元）
+              <span class="unit-input money-input">
+                <input id="supportAmount" name="supportAmount" type="number" inputmode="decimal" min="0" step="1" />
+                <span aria-hidden="true">000</span>
+              </span>
+            </label>
+            <label>
+              業代累計獎金（元）
+              <span class="unit-input money-input">
+                <input id="cumulativeBonusAmount" name="cumulativeBonusAmount" type="number" inputmode="decimal" min="0" step="1" />
+                <span aria-hidden="true">000</span>
+              </span>
+            </label>
+          </div>
+        </section>
       </form>
     </section>
 
@@ -207,6 +223,6 @@
     <span>資料維護：data/vehicles.tw.toyota.2026-06-21.json、data/rules.example.json</span>
   </footer>
 
-  <script src="assets/app.js?v=accessory-cost-label-20260630"></script>
+  <script src="assets/app.js?v=accessory-gift-support-20260630"></script>
 </body>
 </html>
