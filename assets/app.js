@@ -227,7 +227,7 @@ function calculate() {
     { label: "外促活動內扣", amount: -Math.abs(externalPromotionDeduction), note: externalPromotionDeduction === 0 ? "無" : "手動輸入扣款" },
     { label: "無乙式減發", amount: -Math.abs(noInsuranceDeduction), note: noInsuranceDeduction === 0 ? "無" : "手動輸入扣款" },
     { label: "無影音減發", amount: -Math.abs(noAvDeduction), note: noAvDeduction === 0 ? "無" : "手動輸入扣款" },
-    { label: "配件獎金合計", amount: accessoryBonusTotal, note: accessoryBonusTotal === 0 ? "未填" : `成交 ${currency(accessorySaleAmount)} / 成本 ${currency(accessoryCostAmount)}` },
+    { label: "配件獎金合計", amount: accessoryBonusTotal, note: accessoryBonusTotal === 0 ? "未填" : `成交 ${currency(accessorySaleAmount)} / 業價 ${currency(accessoryCostAmount)}` },
     { label: "其他調整", amount: manualAdjustment, note: manualAdjustment === 0 ? "無" : "手動輸入" }
   ];
 
