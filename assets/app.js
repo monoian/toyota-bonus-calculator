@@ -24,7 +24,7 @@ const fields = {
   vehicleGrade: $("vehicleGrade"),
   modelYear: $("modelYear"),
   salePrice: $("salePrice"),
-  vehicleBonusAmount: $("vehicleBonusAmount"),
+  vehicleBonusRate: $("vehicleBonusRate"),
   stageBonusAmount: $("stageBonusAmount"),
   cumulativeBonusAmount: $("cumulativeBonusAmount"),
   supportAmount: $("supportAmount"),
@@ -56,6 +56,27 @@ function numberValue(input, fallback = 0) {
   if (raw === "" || raw === null || raw === undefined) return fallback;
   const value = Number(raw);
   return Number.isFinite(value) ? value : fallback;
+}
+
+function amountValue(input, fallback = 0) {
+  const raw = typeof input === "string" ? input : input?.value;
+  if (raw === "" || raw === null || raw === undefined) return fallback;
+  const value = Number(raw);
+  return Number.isFinite(value) ? Math.round(value * 1000) : fallback;
+}
+
+function amountInputValue(amount) {
+  const value = Number(amount) || 0;
+  if (value === 0) return "";
+  const thousands = value / 1000;
+  return Number.isInteger(thousands)
+    ? String(thousands)
+    : String(Number(thousands.toFixed(3)));
+}
+
+function percentText(value) {
+  const number = Number(value) || 0;
+  return Number.isInteger(number) ? String(number) : String(Number(number.toFixed(2)));
 }
 
 function currentMonthValue() {
@@ -152,7 +173,7 @@ function populateGrades() {
 }
 
 function applyRulesUi() {
-  fields.supportAmount.value = 0;
+  fields.supportAmount.value = "";
 }
 
 function getSelectedVehicle() {
@@ -181,23 +202,24 @@ function calculate() {
   const defaultPrice = wanToTwd(grade.listPriceWan);
   fields.salePrice.placeholder = `預設：${currency(defaultPrice)}（${grade.listPriceWan}萬）`;
 
-  const basePrice = numberValue(fields.salePrice, defaultPrice) || defaultPrice;
-  const vehicleBonus = numberValue(fields.vehicleBonusAmount, 0);
-  const stageBonus = numberValue(fields.stageBonusAmount, 0);
-  const cumulativeBonus = numberValue(fields.cumulativeBonusAmount, 0);
-  const supportAmount = numberValue(fields.supportAmount, 0);
-  const zeroInterestBurden = numberValue(fields.zeroInterestBurden, 0);
-  const externalPromotionDeduction = numberValue(fields.externalPromotionDeduction, 0);
-  const manualAdjustment = numberValue(fields.manualAdjustment, 0);
-  const noInsuranceDeduction = numberValue(fields.noInsuranceDeduction, 0);
-  const noAvDeduction = numberValue(fields.noAvDeduction, 0);
-  const accessorySaleAmount = numberValue(fields.accessorySaleAmount, 0);
-  const accessoryCostAmount = numberValue(fields.accessoryCostAmount, 0);
+  const basePrice = amountValue(fields.salePrice, defaultPrice) || defaultPrice;
+  const vehicleBonusRate = numberValue(fields.vehicleBonusRate, 0);
+  const vehicleBonus = Math.round(basePrice * vehicleBonusRate / 100);
+  const stageBonus = amountValue(fields.stageBonusAmount, 0);
+  const cumulativeBonus = amountValue(fields.cumulativeBonusAmount, 0);
+  const supportAmount = amountValue(fields.supportAmount, 0);
+  const zeroInterestBurden = amountValue(fields.zeroInterestBurden, 0);
+  const externalPromotionDeduction = amountValue(fields.externalPromotionDeduction, 0);
+  const manualAdjustment = amountValue(fields.manualAdjustment, 0);
+  const noInsuranceDeduction = amountValue(fields.noInsuranceDeduction, 0);
+  const noAvDeduction = amountValue(fields.noAvDeduction, 0);
+  const accessorySaleAmount = amountValue(fields.accessorySaleAmount, 0);
+  const accessoryCostAmount = amountValue(fields.accessoryCostAmount, 0);
   const accessoryBonusTotal = accessorySaleAmount - accessoryCostAmount;
-  fields.accessoryBonusTotal.value = Math.round(accessoryBonusTotal);
+  fields.accessoryBonusTotal.value = amountInputValue(accessoryBonusTotal);
 
   const rows = [
-    { label: "車輛獎金", amount: vehicleBonus, note: manualNote(vehicleBonus) },
+    { label: "車輛獎金", amount: vehicleBonus, note: vehicleBonusRate === 0 ? "未填" : `${percentText(vehicleBonusRate)}% × ${currency(basePrice)}` },
     { label: "階段獎金", amount: stageBonus, note: manualNote(stageBonus) },
     { label: "業代累計獎金", amount: cumulativeBonus, note: manualNote(cumulativeBonus) },
     { label: "所支援金", amount: supportAmount, note: manualNote(supportAmount) },
@@ -256,7 +278,7 @@ function renderRulesPreview() {
     <ul>
       <li>適用期間：${escapeHtml(rules.meta?.effectiveFrom || "未設定")} ～ ${escapeHtml(rules.meta?.effectiveTo || "未設定")}</li>
       <li>前台所有獎金項目皆由業務手動輸入。</li>
-      <li>0利率負擔、外促活動內扣、無乙式減發、無影音減發請填正數，系統會自動扣除。</li>
+      <li>金額欄位以千元輸入；0利率負擔、外促活動內扣、無乙式減發、無影音減發會自動扣除。</li>
     </ul>
   `;
 }
@@ -264,18 +286,18 @@ function renderRulesPreview() {
 function resetForm() {
   document.getElementById("calculatorForm").reset();
   fields.dealMonth.value = currentMonthValue();
-  fields.vehicleBonusAmount.value = 0;
-  fields.stageBonusAmount.value = 0;
-  fields.cumulativeBonusAmount.value = 0;
-  fields.supportAmount.value = 0;
-  fields.zeroInterestBurden.value = 0;
-  fields.externalPromotionDeduction.value = 0;
-  fields.manualAdjustment.value = 0;
-  fields.noInsuranceDeduction.value = 0;
-  fields.noAvDeduction.value = 0;
-  fields.accessorySaleAmount.value = 0;
-  fields.accessoryCostAmount.value = 0;
-  fields.accessoryBonusTotal.value = 0;
+  fields.vehicleBonusRate.value = "";
+  fields.stageBonusAmount.value = "";
+  fields.cumulativeBonusAmount.value = "";
+  fields.supportAmount.value = "";
+  fields.zeroInterestBurden.value = "";
+  fields.externalPromotionDeduction.value = "";
+  fields.manualAdjustment.value = "";
+  fields.noInsuranceDeduction.value = "";
+  fields.noAvDeduction.value = "";
+  fields.accessorySaleAmount.value = "";
+  fields.accessoryCostAmount.value = "";
+  fields.accessoryBonusTotal.value = "";
   populateGrades();
   calculate();
 }

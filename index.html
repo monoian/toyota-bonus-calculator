@@ -66,11 +66,17 @@
         <div class="grid two">
           <label>
             成交金額（元，選填）
-            <input id="salePrice" name="salePrice" type="number" inputmode="numeric" min="0" step="1000" placeholder="預設用建議售價" />
+            <span class="unit-input money-input">
+              <input id="salePrice" name="salePrice" type="number" inputmode="decimal" min="0" step="1" placeholder="預設用建議售價" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
-            車輛獎金（元）
-            <input id="vehicleBonusAmount" name="vehicleBonusAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            車輛獎金（%）
+            <span class="unit-input percent-input">
+              <input id="vehicleBonusRate" name="vehicleBonusRate" type="number" inputmode="decimal" min="0" step="0.1" />
+              <span aria-hidden="true">%</span>
+            </span>
           </label>
         </div>
 
@@ -79,38 +85,62 @@
         <div class="grid two">
           <label>
             階段獎金（元）
-            <input id="stageBonusAmount" name="stageBonusAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="stageBonusAmount" name="stageBonusAmount" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
             業代累計獎金（元）
-            <input id="cumulativeBonusAmount" name="cumulativeBonusAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="cumulativeBonusAmount" name="cumulativeBonusAmount" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
         </div>
 
         <div class="grid two">
           <label>
             所支援金（元）
-            <input id="supportAmount" name="supportAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="supportAmount" name="supportAmount" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
             0利率負擔（元）
-            <input id="zeroInterestBurden" name="zeroInterestBurden" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="zeroInterestBurden" name="zeroInterestBurden" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
             外促活動內扣（元）
-            <input id="externalPromotionDeduction" name="externalPromotionDeduction" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="externalPromotionDeduction" name="externalPromotionDeduction" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
             其他調整（元，可負數）
-            <input id="manualAdjustment" name="manualAdjustment" type="number" inputmode="numeric" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="manualAdjustment" name="manualAdjustment" type="number" inputmode="decimal" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
             無乙式減發（元）
-            <input id="noInsuranceDeduction" name="noInsuranceDeduction" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="noInsuranceDeduction" name="noInsuranceDeduction" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
           <label>
             無影音減發（元）
-            <input id="noAvDeduction" name="noAvDeduction" type="number" inputmode="numeric" min="0" step="100" value="0" />
+            <span class="unit-input money-input">
+              <input id="noAvDeduction" name="noAvDeduction" type="number" inputmode="decimal" min="0" step="1" />
+              <span aria-hidden="true">000</span>
+            </span>
           </label>
         </div>
 
@@ -122,15 +152,24 @@
           <div class="grid three">
             <label>
               配件成交金額（元）
-              <input id="accessorySaleAmount" name="accessorySaleAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+              <span class="unit-input money-input">
+                <input id="accessorySaleAmount" name="accessorySaleAmount" type="number" inputmode="decimal" min="0" step="1" />
+                <span aria-hidden="true">000</span>
+              </span>
             </label>
             <label>
               配件負擔成本（元）
-              <input id="accessoryCostAmount" name="accessoryCostAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
+              <span class="unit-input money-input">
+                <input id="accessoryCostAmount" name="accessoryCostAmount" type="number" inputmode="decimal" min="0" step="1" />
+                <span aria-hidden="true">000</span>
+              </span>
             </label>
             <label>
               配件獎金合計（元）
-              <input id="accessoryBonusTotal" name="accessoryBonusTotal" type="number" inputmode="numeric" step="100" value="0" readonly />
+              <span class="unit-input money-input">
+                <input id="accessoryBonusTotal" name="accessoryBonusTotal" type="number" inputmode="decimal" step="1" readonly />
+                <span aria-hidden="true">000</span>
+              </span>
             </label>
           </div>
         </section>
@@ -168,6 +207,6 @@
     <span>資料維護：data/vehicles.tw.toyota.2026-06-21.json、data/rules.example.json</span>
   </footer>
 
-  <script src="assets/app.js?v=deductions-20260630"></script>
+  <script src="assets/app.js?v=thousand-rate-20260630"></script>
 </body>
 </html>

@@ -210,6 +210,30 @@ textarea:focus {
   box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.08);
 }
 
+.unit-input {
+  position: relative;
+  display: block;
+}
+
+.unit-input input {
+  padding-right: 54px;
+  text-align: right;
+}
+
+.unit-input > span {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-weight: 850;
+  pointer-events: none;
+}
+
+.percent-input input {
+  padding-right: 38px;
+}
+
 input[readonly] {
   background: #f9fafb;
   color: var(--accent-2);
