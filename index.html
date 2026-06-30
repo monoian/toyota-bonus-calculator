@@ -12,10 +12,9 @@
     <div>
       <p class="eyebrow">Toyota Taiwan Sales Bonus</p>
       <h1>單筆成交獎金計算器</h1>
-      <p class="subhead">選一台車，輸入階段、累計、支援金與加購項目，立刻看總獎金。</p>
+      <p class="subhead">選一台車，逐項輸入本單獎金與扣款，立刻看總獎金。</p>
     </div>
     <div class="header-actions">
-      <a id="adminLink" class="btn secondary" href="admin.html">車輛獎金後台</a>
       <button id="resetBtn" class="btn secondary" type="button">清空重算</button>
       <button id="copyBtn" class="btn" type="button">複製結果</button>
     </div>
@@ -70,8 +69,8 @@
             <input id="salePrice" name="salePrice" type="number" inputmode="numeric" min="0" step="1000" placeholder="預設用建議售價" />
           </label>
           <label>
-            車輛獎金固定值（元）
-            <input id="vehicleBonusOverride" name="vehicleBonusOverride" type="number" inputmode="numeric" min="0" step="100" placeholder="空白＝車輛資料 JSON 固定值" />
+            車輛獎金（元）
+            <input id="vehicleBonusAmount" name="vehicleBonusAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
           </label>
         </div>
 
@@ -79,23 +78,12 @@
 
         <div class="grid two">
           <label>
-            階段台數
-            <input id="stageUnits" name="stageUnits" type="number" inputmode="numeric" min="0" step="1" value="0" />
+            階段獎金（元）
+            <input id="stageBonusAmount" name="stageBonusAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
           </label>
           <label>
-            階段獎金覆寫（元，選填）
-            <input id="stageBonusOverride" name="stageBonusOverride" type="number" inputmode="numeric" min="0" step="100" placeholder="空白＝依級距" />
-          </label>
-        </div>
-
-        <div class="grid two">
-          <label>
-            業代累計台數
-            <input id="cumulativeUnits" name="cumulativeUnits" type="number" inputmode="numeric" min="0" step="1" value="0" />
-          </label>
-          <label>
-            累計獎金覆寫（元，選填）
-            <input id="cumulativeBonusOverride" name="cumulativeBonusOverride" type="number" inputmode="numeric" min="0" step="100" placeholder="空白＝依級距" />
+            業代累計獎金（元）
+            <input id="cumulativeBonusAmount" name="cumulativeBonusAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
           </label>
         </div>
 
@@ -116,22 +104,13 @@
             其他調整（元，可負數）
             <input id="manualAdjustment" name="manualAdjustment" type="number" inputmode="numeric" step="100" value="0" />
           </label>
-        </div>
-
-        <div class="addons">
-          <label class="check-card">
-            <input id="insuranceB" name="insuranceB" type="checkbox" />
-            <span>
-              <strong>保險乙式</strong>
-              <small id="insuranceBAmount">依規則檔</small>
-            </span>
+          <label>
+            保險乙式（元）
+            <input id="insuranceBAmount" name="insuranceBAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
           </label>
-          <label class="check-card">
-            <input id="av" name="av" type="checkbox" />
-            <span>
-              <strong>影音</strong>
-              <small id="avAmount">依規則檔</small>
-            </span>
+          <label>
+            影音（元）
+            <input id="avAmount" name="avAmount" type="number" inputmode="numeric" min="0" step="100" value="0" />
           </label>
         </div>
 
